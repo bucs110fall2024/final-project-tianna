@@ -6,13 +6,15 @@
 
 ## Team Members
 
-<< List team member names >>
+Tianna Balkam
 
 ***
 
 ## Project Description
 
-<< Give an overview of your project >>
+I plan to recreate an online version of hangman with a classic mode and an
+unlimited mode that allows the user to keep guessing letters until they get
+it right by continuously extending the arms and legs of the stick figure.
 
 ***    
 
@@ -20,7 +22,8 @@
 
 ### Initial Design
 
-![initial gui](assets/gui.jpg)
+![initial gui](assets/gui.jpg) 
+c:\Users\Tianna\Downloads\gui.jpg
 
 ### Final Design
 
@@ -30,11 +33,11 @@
 
 ### Features
 
-1. << Feature 1 >>
-2. << Feature 2 >>
-3. << Feature 3 >>
-4. << Feature 4 >>
-5. << Feature 5 >>
+1. start menu- choose difficulty
+2. drawn stick figure
+3. box for user to input letter guesses
+4. list to store incorrect letter guesses
+5. results screen-you win/lose 
 
 ### Classes
 
