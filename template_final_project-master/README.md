@@ -23,7 +23,6 @@ it right by continuously extending the arms and legs of the stick figure.
 ### Initial Design
 
 ![initial gui](assets/gui.jpg) 
-c:\Users\Tianna\Downloads\gui.jpg
 
 ### Final Design
 
