@@ -42,6 +42,15 @@ it right by continuously extending the arms and legs of the stick figure.
 
 - << You should have a list of each of your classes with a description >>
 
+Game Class:
+Manage the word to guess and guessed letters.
+Track the player's progress (e.g., wrong guesses, win/loss conditions).
+Transition between game states (e.g., playing, win, lose).
+
+Hangman Class: 
+Manage and render the hangman images.
+Update the hangman drawing based on the number of wrong guesses.
+
 ## ATP
 
 | Step                 |Procedure             |Expected Results                   |

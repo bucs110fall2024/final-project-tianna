@@ -1,11 +1,9 @@
-import pygame
+# import pygame
 
-class Hangman():
-    def __init__(self):
-        self.image = pygame.image.load(#path_to_image) 
-        self.rect = self.image.get_rect()
-        self.rect.x = 0
-        self.rect.y = 0
+# class Hangman():
 
-    def update(self):
-        pass
+# images: List of hangman images.
+# current_stage: Current hangman stage based on wrong guesses.
+
+# draw(screen): Renders the current hangman stage on the screen.
+# update_stage(wrong_guesses): Updates the stage based on incorrect guesses.
