@@ -4,11 +4,17 @@ from src.hangman import Hangman
 
 class Controller:
     def __init__(self):
+        '''
+        docstring
+        '''
         pygame.init()
         pygame.event.pump()
         self.screen = pygame.display.set_mode()
 
     def mainloop(self):
+        '''
+        docstring
+        '''
         while(True): #this can also be a variable instead of just True
             #1. Handle events
             for event in pygame.event.get():
