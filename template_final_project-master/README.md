@@ -12,9 +12,7 @@ Tianna Balkam
 
 ## Project Description
 
-I plan to recreate an online version of hangman with a classic mode and an
-unlimited mode that allows the user to keep guessing letters until they get
-it right by continuously extending the arms and legs of the stick figure.
+I plan to recreate an online version of hangman with an easy mode where the user  has to guess a word and a hard mode where the user has to guess a phrase.
 
 ***    
 
