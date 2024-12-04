@@ -13,7 +13,7 @@ class Controller:
         '''
         pygame.init()
         pygame.event.pump()
-        self.screen = pygame.display.set_mode(800, 600)
+        self.screen = pygame.display.set_mode((800, 600))
 
     def mainloop(self):
         '''
@@ -22,7 +22,7 @@ class Controller:
         hangman = Hangman()        
         run = True 
         while run: 
-            self.screen.fill(120, 0, 128)
+            self.screen.fill((120, 0, 128))
             hangman.update_stage(self.game.wrong_guesses)
             hangman.draw(self.screen)
 
@@ -37,4 +37,5 @@ class Controller:
 
             #4. Display next frame
             pygame.display.update()
+            pygame.display.flip()
         pygame.quit()

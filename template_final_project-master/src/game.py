@@ -1,5 +1,3 @@
-import pygame
-
 class Game():
     def __init__self(self, word, guessed_letters):
         '''
