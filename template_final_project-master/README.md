@@ -75,10 +75,14 @@ Update the hangman drawing based on the number of wrong guesses.
 
 | Step                 |Procedure             |Expected Results                   |
 |----------------------|:--------------------:|----------------------------------:|
-|  1                   | Run Counter Program  |GUI window appears with count = 0  |
-|  2                   | click count button   | display changes to count = 1      |
+|  1                   |Click Easy or Hard    |Display screen with message saying |
+|                      |Mode button           |"You Lose"                         |
+|  2                   |Guess letters until                                       |
+|                      |drawing is complete   |                                   |
 
 | Step                 |Procedure             |Expected Results                   |
 |----------------------|:--------------------:|----------------------------------:|
-|  1                   | Run Counter Program  |GUI window appears with count = 0  |
-|  2                   | click count button   | display changes to count = 1      |
+|  1                   |Click Easy or Hard    |Display screen with message saying |
+|                      |Mode button           |"You Win"                          |
+|  2                   |Guess letters until                                       |
+|                      |word is complete      |                                   |
