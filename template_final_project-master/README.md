@@ -77,12 +77,12 @@ Update the hangman drawing based on the number of wrong guesses.
 |----------------------|:--------------------:|----------------------------------:|
 |  1                   |Click Easy or Hard    |Display screen with message saying |
 |                      |Mode button           |"You Lose"                         |
-|  2                   |Guess letters until                                       |
-|                      |drawing is complete   |                                   |
+|  2                   |Guess incorrect letters|                                  |
+|                      |until drawing is complete|                                |
 
 | Step                 |Procedure             |Expected Results                   |
 |----------------------|:--------------------:|----------------------------------:|
 |  1                   |Click Easy or Hard    |Display screen with message saying |
 |                      |Mode button           |"You Win"                          |
-|  2                   |Guess letters until                                       |
-|                      |word is complete      |                                   |
+|  2                   |Guess correct letters |                                   |
+|                      |until word is complete|                                   |

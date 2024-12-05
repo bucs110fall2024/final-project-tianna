@@ -30,7 +30,7 @@ class Button(pygame.sprite.Sprite):
         self.image.blit(self.message, (20, 20))
 
 
-## EXAmPLE Button Creation
+## EXAMPLE Button Creation
 
 if __name__ == "__main__":
 

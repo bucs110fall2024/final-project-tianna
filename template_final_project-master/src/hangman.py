@@ -1,23 +1,26 @@
 import pygame
 
 class Hangman():
-    def __init__self(self, images, current_stage):
+    def __init__self(self, screen):
         '''
         Stores the hangman drawing
-        - images: (list) List of hangman images
-        - current_stage: (int) Current hangman stage based on wrong guesses
+        - screen: (obj) Surface of game screen
+        - wrong_guesses: (int) Current number of incorrect letter guesses
         '''
-        self.images = [pygame.image.load(f"hangman{i}.png") for i in range(7)]
-        self.current_stage = 0
-
+        self.screen = screen
+        self.wrong_guesses = 0
     
-    def draw(self, screen): 
+    def draw_stage(self): 
         '''
-        Renders the current hangman stage on the screen
-        args: screen: (obj) surface to be copied onto game screen
+        Draws the hangman figure based on the number of wrong guesses
         return: None
         '''
-        screen.blit(self.images[self.current_stage], (150, 100))
+        black = (0, 0, 0)
+        # Draw the gallows
+        pygame.draw.line(self.screen, black, (100, 400), (300, 400), 5)  # Base
+        pygame.draw.line(self.screen, black, (200, 400), (200, 100), 5)  # Vertical pole
+        pygame.draw.line(self.screen, black, (200, 100), (300, 100), 5)  # Top bar
+        pygame.draw.line(self.screen, black, (300, 100), (300, 150), 5)  # Rope
     
     def update_stage(self, wrong_guesses): 
         '''
