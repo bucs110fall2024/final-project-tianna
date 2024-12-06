@@ -56,7 +56,6 @@ class Game():
             self.running = False
             self.game_state = "lost"
         elif self.hangman.is_winner() and self.running:
-            print("You won!")
             self.running = False
             self.game_state = "won"
 
