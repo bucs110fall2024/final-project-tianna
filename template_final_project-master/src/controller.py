@@ -63,5 +63,4 @@ class Controller:
             self.game.update()
             self.game.draw()
             pygame.display.flip()
-        # self.main_menu()
-        pygame.quit()
+        self.main_menu()
