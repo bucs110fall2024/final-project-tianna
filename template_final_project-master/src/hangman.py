@@ -4,7 +4,8 @@ from wonderwords import RandomWord
 class Hangman():
     def __init__(self):
         '''
-        Handles the hangman drawing and word management.
+        Initializes the Hangman game, including setting up the word to guess,
+        tracking the letters guessed, and setting the number of wrong guesses allowed.
         '''
         self.target_word = ""
         self.guessed_letters = set()
@@ -14,7 +15,10 @@ class Hangman():
     
     def reset(self, difficulty):
         '''
-        Reset the game with a new word based on difficulty.
+        Resets the game, choosing a new word based on the given difficulty.
+
+        Args:
+            difficulty (str): The difficulty of the game, either "Easy" or "Hard".
         '''
         self.guessed_letters.clear()
         self.wrong_guesses = 0

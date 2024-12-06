@@ -59,37 +59,37 @@ class Game():
         '''
         Draw the game elements.
         '''
-        FONT = pygame.font.Font(None, 48)
-        font = pygame.font.Font(None, 36)
+        font1 = pygame.font.Font(None, 48)
+        font2 = pygame.font.Font(None, 36)
         PURPLE = (120, 0, 128)
         BLACK = (0, 0, 0)
         self.screen.fill(PURPLE)
 
         if self.game_state == "playing":
             self.hangman.draw(self.screen)
-            word_display = FONT.render(self.hangman.display_word(), True, BLACK)
+            word_display = font1.render(self.hangman.display_word(), True, BLACK)
             self.screen.blit(word_display, (250, 550))
 
             guessed_letters_text = "Guessed Letters: " + ", ".join(sorted(self.hangman.guessed_letters))
-            guessed_letters_display = font.render(guessed_letters_text, True, BLACK)
+            guessed_letters_display = font2.render(guessed_letters_text, True, BLACK)
             self.screen.blit(guessed_letters_display, (400, 200)) 
 
             color = (0, 255, 0) if self.active else (255, 0, 0)
             pygame.draw.rect(self.screen, color, self.input_box, 2)
 
-            text_surface = FONT.render(self.input_text, True, BLACK)
+            text_surface = font1.render(self.input_text, True, BLACK)
             self.screen.blit(text_surface, (self.input_box.x + 5, self.input_box.y + 5))
 
-            instruction = font.render("Enter a letter and press Enter", True, BLACK)
+            instruction = font2.render("Enter a letter and press Enter", True, BLACK)
             self.screen.blit(instruction, (200, 450))
 
         elif self.game_state == "won":
-            win_text = FONT.render("You Win!", True, BLACK)
+            win_text = font1.render("You Win!", True, BLACK)
             self.screen.blit(win_text, (300, 250))
 
         elif self.game_state == "lost":
-            lose_text = FONT.render("You Lose!", True, BLACK)
+            lose_text = font1.render("You Lose!", True, BLACK)
             self.screen.blit(lose_text, (300, 250))
 
-            target_word_text = font.render(f"The word was: {self.hangman.target_word}", True, BLACK)
+            target_word_text = font2.render(f"The word was: {self.hangman.target_word}", True, BLACK)
             self.screen.blit(target_word_text, (250, 350))
