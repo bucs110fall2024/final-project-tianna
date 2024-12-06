@@ -10,7 +10,7 @@ Tianna Balkam
 
 ## Project Description
 
-An online version of hangman with an easy mode where the user tries to guess a short word and a hard mode where the user tries to guess a longer word.
+This program is an online version of hangman with an easy mode where the user tries to guess a short word and a hard mode where the user tries to guess a longer word.
 
 ***    
 
@@ -50,12 +50,12 @@ Manages transitions between different screens (main menu, game, win/loss), handl
 | Step                 |Procedure             |Expected Results                   |
 |----------------------|:--------------------:|----------------------------------:|
 |  1                   |click Easy Mode button|Displays screen with image of the  |
-|  2                   |                      |gallows and dashes representing a shorter word|
+|  2                   |                      |gallows and dashes representing a 3-5 letter word|
 
 | Step                 |Procedure             |Expected Results                   |
 |----------------------|:--------------------:|----------------------------------:|
 |  1                   |Click Hard Mode button|Displays screen with image of the  |
-|                      |                      |gallows and dashes representing a longer word|
+|                      |                      |gallows and dashes representing a 6-8 letter word|
 
 | Step                 |Procedure             |Expected Results                   |
 |----------------------|:--------------------:|----------------------------------:|
