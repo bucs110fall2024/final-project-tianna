@@ -14,7 +14,6 @@ class Controller:
         self.game = Game(self.screen)
         self.state = "MENU"
         self.clock = pygame.time.Clock()
-        self.main_menu()
 
     def main_menu(self):
         '''
@@ -31,7 +30,6 @@ class Controller:
         Start the game with the selected difficulty.
         '''
         self.game.start(difficulty)
-        self.state = "RUNNING"
         self.mainloop()
         self.main_menu()
     
@@ -40,7 +38,6 @@ class Controller:
         Display the win or lose screen.
         '''
         menu = pygame_menu.Menu
-            #"Game Over" if not win else "Congratulations!", 800, 600, theme=pygame_menu.themes.THEME_BLUE)
         if win:
             menu.add.label("You Win!", max_char=-1, font_size=50)
         else:
@@ -66,4 +63,5 @@ class Controller:
             self.game.update()
             self.game.draw()
             pygame.display.flip()
-        self.main_menu()
+        # self.main_menu()
+        pygame.quit()
