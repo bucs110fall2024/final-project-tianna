@@ -22,7 +22,8 @@ class Hangman():
         if difficulty == "Easy":
             self.target_word = self.rw.get_random_word(minLength=3, maxLength=5).lower()
         elif difficulty == "Hard":
-            self.target_word = random_quotes_generator.get_random_quotes()
+            phrase = random_quotes_generator.get_random_quotes().lower()
+            self.target_word = "".join(phrase)  
 
     def make_guess(self, letter):
         '''
@@ -37,7 +38,8 @@ class Hangman():
         '''
         Check if the player has guessed the word.
         '''
-        return all(letter in self.guessed_letters for letter in self.target_word)
+        return all(letter in self.guessed_letters for letter in self.target_word if letter.isalpha())
+
 
     def is_loser(self):
         '''

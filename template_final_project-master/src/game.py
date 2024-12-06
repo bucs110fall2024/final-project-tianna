@@ -48,12 +48,13 @@ class Game():
         '''
         Update the game state and check win/lose conditions.
         '''
-        if self.hangman.is_loser():
-            print("You lost! The word was:", self.hangman.target_word)
+        if self.hangman.is_loser() and self.running:
             self.running = False
-        elif self.hangman.is_winner():
+            self.controller.state = "LOSE"
+        elif self.hangman.is_winner() and self.running:
             print("You won!")
             self.running = False
+            self.controller.state = "WIN"
 
     def draw(self):
         '''
