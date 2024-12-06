@@ -31,6 +31,7 @@ class Controller:
         self.game.start(difficulty)
         self.state = "RUNNING"
         self.mainloop()
+        self.main_menu()
     
     def show_end_screen(self, win):
         """Display the win or lose screen."""

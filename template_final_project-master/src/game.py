@@ -25,6 +25,10 @@ class Game():
         '''
         Process player input.
         '''
+        if event.type == pygame.KEYDOWN:
+            if self.game_state in ["won", "lost"] and event.key == pygame.K_r:
+                self.runnning = False
+
         if event.type == pygame.MOUSEBUTTONDOWN:
             if self.input_box.collidepoint(event.pos):
                 self.active = True
@@ -88,9 +92,15 @@ class Game():
             win_text = FONT.render("You Win!", True, BLACK)
             self.screen.blit(win_text, (300, 250))
 
+            restart_text = pygame.font.Font(None, 36).render("Press R to Restart", True, BLACK)
+            self.screen.blit(restart_text, (250, 400))
+
         elif self.game_state == "lost":
             lose_text = FONT.render("You Lose!", True, BLACK)
             self.screen.blit(lose_text, (300, 250))
 
             target_word_text = pygame.font.Font(None, 36).render(f"The word was: {self.hangman.target_word}", True, BLACK)
             self.screen.blit(target_word_text, (250, 350))
+
+            restart_text = pygame.font.Font(None, 36).render("Press R to Restart", True, BLACK)
+            self.screen.blit(restart_text, (250, 400))
