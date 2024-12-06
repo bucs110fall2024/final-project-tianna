@@ -41,7 +41,7 @@ class Game():
                 elif event.key == pygame.K_BACKSPACE:
                     self.input_text = self.input_text[:-1]  
                 else:
-                    self.input_text += event.key  
+                    self.input_text += event.unicode 
 
     
     def update(self):
