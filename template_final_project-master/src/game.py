@@ -50,11 +50,9 @@ class Game():
         '''
         if self.hangman.is_loser():
             self.running = False
-            self.controller.state = "LOSE"
         elif self.hangman.is_winner():
             print("You won!")
             self.running = False
-            self.controller.state = "WIN"
 
     def draw(self):
         '''

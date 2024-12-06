@@ -69,12 +69,6 @@ Update the hangman drawing based on the number of wrong guesses.
 
 | Step                 |Procedure             |Expected Results                   |
 |----------------------|:--------------------:|----------------------------------:|
-|  1                   |Click Easy or Hard    |Display an error message saying to |
-|                      |Mode button           |select a valid letter key          |
-|  2                   |Press non-letter key  |                                   |
-
-| Step                 |Procedure             |Expected Results                   |
-|----------------------|:--------------------:|----------------------------------:|
 |  1                   |Click Easy or Hard    |Display screen with message saying |
 |                      |Mode button           |"You Lose"                         |
 |  2                   |Guess incorrect letters|                                  |
