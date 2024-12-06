@@ -14,7 +14,7 @@ class Game():
         self.running = False
         self.game_state = "playing"
         self.input_text = ""  
-        self.input_box = pygame.Rect(300, 500, 200, 50)  
+        self.input_box = pygame.Rect(300, 500, 75, 50)  
         self.active = False
     
     def start(self, difficulty):
