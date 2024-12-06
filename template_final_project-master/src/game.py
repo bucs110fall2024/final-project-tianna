@@ -27,7 +27,7 @@ class Game():
         '''
         if event.type == pygame.KEYDOWN:
             if self.game_state in ["won", "lost"] and event.key == pygame.K_r:
-                self.runnning = False
+                self.running = False
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             if self.input_box.collidepoint(event.pos):
