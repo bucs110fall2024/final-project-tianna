@@ -4,7 +4,10 @@ import pygame
 class Game():
     def __init__(self, screen):
         '''
-        Initializes the game state.
+        Initializes the game state, including setting up the screen and initializing the Hangman object.
+        Args:
+            screen (pygame.Surface): The pygame screen object where the game will be displayed.
+        Return: None
         '''
         self.screen = screen
         self.hangman = Hangman()
@@ -16,14 +19,20 @@ class Game():
     
     def start(self, difficulty):
         '''
-        Start the game with the given difficulty.
+        Starts the game with the specified difficulty level by resetting the Hangman object.
+        Args:
+            difficulty (str): The difficulty level, either "Easy" or "Hard".
+        Return: None
         '''
         self.hangman.reset(difficulty)
         self.running = True
 
     def process_event(self, event):
         '''
-        Process player input.
+        Processes player input from mouse and keyboard events.
+        Args:
+            event (pygame.event.Event): The event that occurred (ex: mouse button click, key press).
+        Return: None
         '''
         if event.type == pygame.MOUSEBUTTONDOWN:
             if self.input_box.collidepoint(event.pos):
@@ -46,7 +55,9 @@ class Game():
     
     def update(self):
         '''
-        Update the game state and check win/lose conditions.
+        Updates the game state by checking if the player has won or lost.
+        Args: None
+        Return: None
         '''
         if self.hangman.is_loser():
             self.running = False
@@ -57,7 +68,10 @@ class Game():
 
     def draw(self):
         '''
-        Draw the game elements.
+        Draws the game elements, including the word to be guessed, guessed letters, and the hangman figure.
+        Displays win or loss screens when the game is over.
+        Args: None
+        Return: None
         '''
         font1 = pygame.font.Font(None, 48)
         font2 = pygame.font.Font(None, 36)

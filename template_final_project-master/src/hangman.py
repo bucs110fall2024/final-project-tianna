@@ -6,6 +6,8 @@ class Hangman():
         '''
         Initializes the Hangman game, including setting up the word to guess,
         tracking the letters guessed, and setting the number of wrong guesses allowed.
+        Args: None
+        Return: None
         '''
         self.target_word = ""
         self.guessed_letters = set()
@@ -16,9 +18,9 @@ class Hangman():
     def reset(self, difficulty):
         '''
         Resets the game, choosing a new word based on the given difficulty.
-
         Args:
             difficulty (str): The difficulty of the game, either "Easy" or "Hard".
+        Return: None
         '''
         self.guessed_letters.clear()
         self.wrong_guesses = 0
@@ -29,7 +31,11 @@ class Hangman():
 
     def make_guess(self, letter):
         '''
-        Process a guessed letter.
+        Processes a player's guess, updating the number of wrong guesses or 
+        adding the letter to the guessed letters if correct.
+        Args:
+            letter (str): The letter guessed by the player.
+        Return: None
         '''
         if letter in self.target_word and letter not in self.guessed_letters:
             self.guessed_letters.add(letter)
@@ -39,27 +45,39 @@ class Hangman():
 
     def is_winner(self):
         '''
-        Check if the player has guessed the word.
+        Checks if the player has won by guessing all the letters of the word.
+        Args: None
+        Return:
+            bool: True if all letters of the word are guessed, False otherwise.
         '''
         return all(letter in self.guessed_letters for letter in self.target_word if letter.isalpha())
 
 
     def is_loser(self):
         '''
-        Check if the player has lost.
+        Checks if the player has lost by reaching the maximum number of wrong guesses.
+        Args: None
+        Return:
+            bool: True if the player has lost, False otherwise.
         '''
         return self.wrong_guesses >= self.max_wrong_guesses
 
     def display_word(self):
         '''
-        Return the word with guessed letters revealed.
+        Returns the word with blanks for unguessed letters and the correct letters revealed.
+        Args: None
+        Return:
+            str: The word to guess with unguessed letters represented by underscores.
         '''
         return " ".join([letter if letter in self.guessed_letters else "_" for letter in self.target_word])
 
 
     def draw(self, screen): 
         '''
-        Draw the hangman figure.
+        Draws the hangman figure and gallows on the given screen based on the number of wrong guesses.
+        Args:
+            screen (pygame.Surface): The surface to draw the hangman and gallows on.
+        Return: None
         '''
         BLACK = (0, 0, 0)
 

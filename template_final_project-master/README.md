@@ -66,11 +66,12 @@ Update the hangman drawing based on the number of wrong guesses.
 |  1                   |Click Easy or Hard    |The letter replaces any corresponding|
 |                      |Mode button           |dashes or appears in the incorrect |
 |  2                   |Press any letter key  |letters box                        |
+|                      |and hit enter         |                                   |
 
 | Step                 |Procedure             |Expected Results                   |
 |----------------------|:--------------------:|----------------------------------:|
 |  1                   |Click Easy or Hard    |Display screen with message saying |
-|                      |Mode button           |"You Lose"                         |
+|                      |Mode button           |"You Lose" and the correct word    |
 |  2                   |Guess incorrect letters|                                  |
 |                      |until drawing is complete|                                |
 
