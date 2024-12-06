@@ -1,14 +1,11 @@
 import pygame 
 import pygame_menu
-# import random_word
-# import random_quotes_generator
 from src.game import Game
-from src.hangman import Hangman
 
 class Controller:
     def __init__(self):
         '''
-        docstring
+        Handles the main menu and game loop.
         '''
         pygame.init()
         pygame.event.pump()
@@ -17,8 +14,10 @@ class Controller:
         self.game = Game(self.screen)
 
     def main_menu(self):
-        """Display the main menu."""
-        menu = pygame_menu.Menu("Hangman", 800, 600, theme=pygame_menu.themes.THEME_DARK)
+        '''
+        Display the main menu.
+        '''
+        menu = pygame_menu.Menu("Hangman", 800, 600, theme = pygame_menu.themes.THEME_DARK)
         menu.add.button("Easy Mode", lambda: self.start_game("Easy"))
         menu.add.button("Hard Mode", lambda: self.start_game("Hard"))
         menu.add.button("Quit", pygame_menu.events.EXIT)
@@ -27,15 +26,15 @@ class Controller:
     def start_game(self, difficulty):
         """Start the game with the selected difficulty."""
         self.game.start(difficulty)
-        self.game_loop()
+        self.mainloop()
 
     def mainloop(self):
         '''
-        docstring
+        Run the main game loop.
         '''
+        clock = pygame.time.Clock()
         run = True 
         while run: 
-            self.screen.fill((120, 0, 128))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     run = False
@@ -45,5 +44,5 @@ class Controller:
             self.game.update()
             self.game.draw()
             pygame.display.flip()
-
+            clock.tick(30)
         pygame.quit()
