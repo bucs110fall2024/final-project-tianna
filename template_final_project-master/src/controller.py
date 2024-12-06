@@ -14,6 +14,7 @@ class Controller:
         self.game = Game(self.screen)
         self.state = "MENU"
         self.clock = pygame.time.Clock()
+        self.main_menu()
 
     def main_menu(self):
         '''
@@ -30,6 +31,7 @@ class Controller:
         Start the game with the selected difficulty.
         '''
         self.game.start(difficulty)
+        self.state = "RUNNING"
         self.mainloop()
         self.main_menu()
     
