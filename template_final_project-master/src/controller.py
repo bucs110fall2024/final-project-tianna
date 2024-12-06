@@ -51,7 +51,7 @@ class Controller:
         '''
         Run the main game loop.
         '''
-        clock = pygame.time.Clock()
+        #clock = pygame.time.Clock()
         run = True 
         while run: 
             for event in pygame.event.get():
@@ -61,8 +61,7 @@ class Controller:
                     self.game.process_event(event)
             
             self.game.update()
-            self.screen.fill((0, 0, 0))
             self.game.draw()
             pygame.display.flip()
-            clock.tick(30)
+            #clock.tick(30)
         self.main_menu()
