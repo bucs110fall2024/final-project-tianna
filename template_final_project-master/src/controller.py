@@ -13,12 +13,14 @@ class Controller:
         pygame.display.set_caption("Hangman")
         self.game = Game(self.screen)
         self.state = "MENU"
+        self.clock = pygame.time.Clock()
+        self.main_menu()
 
     def main_menu(self):
         '''
         Display the main menu.
         '''
-        menu = pygame_menu.Menu("Hangman", 800, 600, theme = pygame_menu.themes.THEME_DARK)
+        menu = pygame_menu.Menu("Hangman", 800, 600, theme = pygame_menu.themes.THEME_GREEN)
         menu.add.button("Easy Mode", lambda: self.start_game("Easy"))
         menu.add.button("Hard Mode", lambda: self.start_game("Hard"))
         menu.add.button("Quit", pygame_menu.events.EXIT)
@@ -66,4 +68,4 @@ class Controller:
             self.game.draw()
             pygame.display.flip()
             clock.tick(30)
-        self.main_menu
+        self.main_menu()

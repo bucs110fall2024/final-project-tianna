@@ -1,6 +1,5 @@
 import pygame
-from random_word import RandomWords
-import random_quotes_generator
+from wonderwords import RandomWord
 
 class Hangman():
     def __init__(self):
@@ -11,19 +10,18 @@ class Hangman():
         self.guessed_letters = set()
         self.wrong_guesses = 0
         self.max_wrong_guesses = 6
-        self.rw = RandomWords()
+        self.rw = RandomWord()
     
     def reset(self, difficulty):
         '''
-        Reset the game with a new word or phrase based on difficulty.
+        Reset the game with a new word based on difficulty.
         '''
         self.guessed_letters.clear()
         self.wrong_guesses = 0
         if difficulty == "Easy":
-            self.target_word = self.rw.get_random_word(minLength=3, maxLength=5).lower()
+            self.target_word = self.rw.word(word_min_length=3, word_max_length=5).lower()
         elif difficulty == "Hard":
-            phrase = random_quotes_generator.get_random_quotes().lower()
-            self.target_word = "".join(phrase)  
+            self.target_word = self.rw.word(word_min_length=6, word_max_length=8).lower()
 
     def make_guess(self, letter):
         '''
