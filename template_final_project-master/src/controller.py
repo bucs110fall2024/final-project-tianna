@@ -64,4 +64,4 @@ class Controller:
             self.game.draw()
             pygame.display.flip()
             clock.tick(30)
-        pygame.quit()
+        self.main_menu()
