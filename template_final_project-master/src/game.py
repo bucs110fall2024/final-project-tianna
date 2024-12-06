@@ -9,9 +9,9 @@ class Game():
         self.screen = screen
         self.hangman = Hangman()
         self.running = False
-
+        self.game_state = "playing"
         self.input_text = ""  
-        self.input_box = pygame.Rect(300, 600, 200, 50)  
+        self.input_box = pygame.Rect(300, 500, 200, 50)  
         self.active = False
     
     def start(self, difficulty):
@@ -50,29 +50,47 @@ class Game():
         '''
         if self.hangman.is_loser() and self.running:
             self.running = False
-            self.hangman.state.controller = "LOSE"
+            self.game_state = "lost"
         elif self.hangman.is_winner() and self.running:
             print("You won!")
             self.running = False
-            self.hangman.state.controller = "WIN"
+            self.game_state = "won"
 
     def draw(self):
         '''
         Draw the game elements.
         '''
         FONT = pygame.font.Font(None, 48)
+        font = pygame.font.Font(None, 36)
         PURPLE = (120, 0, 128)
         BLACK = (0, 0, 0)
         self.screen.fill(PURPLE)
-        self.hangman.draw(self.screen)
-        word_display = FONT.render(self.hangman.display_word(), True, BLACK)
-        self.screen.blit(word_display, (250, 550))
 
-        color = (0, 255, 0) if self.active else (255, 0, 0)
-        pygame.draw.rect(self.screen, color, self.input_box, 2)
+        if self.game_state == "playing":
+            self.hangman.draw(self.screen)
+            word_display = FONT.render(self.hangman.display_word(), True, BLACK)
+            self.screen.blit(word_display, (250, 550))
 
-        text_surface = FONT.render(self.input_text, True, BLACK)
-        self.screen.blit(text_surface, (self.input_box.x + 5, self.input_box.y + 5))
+            guessed_letters_text = "Guessed Letters: " + ", ".join(sorted(self.hangman.guessed_letters))
+            guessed_letters_display = font.render(guessed_letters_text, True, BLACK)
+            self.screen.blit(guessed_letters_display, (400, 200)) 
 
-        instruction = FONT.render("Enter a letter and press Enter", True, BLACK)
-        self.screen.blit(instruction, (200, 700))
+            color = (0, 255, 0) if self.active else (255, 0, 0)
+            pygame.draw.rect(self.screen, color, self.input_box, 2)
+
+            text_surface = FONT.render(self.input_text, True, BLACK)
+            self.screen.blit(text_surface, (self.input_box.x + 5, self.input_box.y + 5))
+
+            instruction = font.render("Enter a letter and press Enter", True, BLACK)
+            self.screen.blit(instruction, (200, 450))
+
+        elif self.game_state == "won":
+            win_text = FONT.render("You Win!", True, BLACK)
+            self.screen.blit(win_text, (300, 250))
+
+        elif self.game_state == "lost":
+            lose_text = FONT.render("You Lose!", True, BLACK)
+            self.screen.blit(lose_text, (300, 250))
+
+            target_word_text = pygame.font.Font(None, 36).render(f"The word was: {self.hangman.target_word}", True, BLACK)
+            self.screen.blit(target_word_text, (250, 350))

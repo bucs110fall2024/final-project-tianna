@@ -31,6 +31,7 @@ class Hangman():
             self.guessed_letters.add(letter)
         else:
             self.wrong_guesses += 1
+            self.guessed_letters.add(letter)
 
     def is_winner(self):
         '''
