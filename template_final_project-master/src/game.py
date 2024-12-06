@@ -48,10 +48,10 @@ class Game():
         '''
         Update the game state and check win/lose conditions.
         '''
-        if self.hangman.is_loser() and self.running:
+        if self.hangman.is_loser():
             self.running = False
             self.game_state = "lost"
-        elif self.hangman.is_winner() and self.running:
+        elif self.hangman.is_winner():
             self.running = False
             self.game_state = "won"
 
@@ -91,5 +91,5 @@ class Game():
             lose_text = FONT.render("You Lose!", True, BLACK)
             self.screen.blit(lose_text, (300, 250))
 
-            target_word_text = pygame.font.Font(None, 36).render(f"The word was: {self.hangman.target_word}", True, BLACK)
+            target_word_text = font.render(f"The word was: {self.hangman.target_word}", True, BLACK)
             self.screen.blit(target_word_text, (250, 350))

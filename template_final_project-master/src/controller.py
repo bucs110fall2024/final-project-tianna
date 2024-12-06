@@ -12,9 +12,9 @@ class Controller:
         self.screen = pygame.display.set_mode((800, 600))
         pygame.display.set_caption("Hangman")
         self.game = Game(self.screen)
-        self.state = "MENU"
-        self.clock = pygame.time.Clock()
-        self.main_menu()
+        # self.state = "MENU"
+        # self.clock = pygame.time.Clock()
+        # self.main_menu()
 
     def main_menu(self):
         '''
@@ -35,20 +35,20 @@ class Controller:
         self.mainloop()
         self.main_menu()
     
-    def show_end_screen(self, win):
-        '''
-        Display the win or lose screen.
-        '''
-        menu = pygame_menu.Menu
-        if win:
-            menu.add.label("You Win!", max_char=-1, font_size=50)
-        else:
-            menu.add.label("You Lose!", max_char=-1, font_size=50)
-            menu.add.label(f"The word was: {self.game.hangman.selected_word}", font_size=30)
+    # def show_end_screen(self, win):
+    #     '''
+    #     Display the win or lose screen.
+    #     '''
+    #     menu = pygame_menu.Menu
+    #     if win:
+    #         menu.add.label("You Win!", max_char=-1, font_size=50)
+    #     else:
+    #         menu.add.label("You Lose!", max_char=-1, font_size=50)
+    #         menu.add.label(f"The word was: {self.game.hangman.selected_word}", font_size=30)
         
-        menu.add.button("Play Again", self.main_menu)
-        menu.add.button("Quit", pygame_menu.events.EXIT)
-        menu.mainloop(self.screen)
+    #     menu.add.button("Play Again", self.main_menu)
+    #     menu.add.button("Quit", pygame_menu.events.EXIT)
+    #     menu.mainloop(self.screen)
 
     def mainloop(self):
         '''
@@ -61,7 +61,6 @@ class Controller:
                     run = False
                 else:
                     self.game.process_event(event)
-            
             self.game.update()
             self.game.draw()
             pygame.display.flip()
