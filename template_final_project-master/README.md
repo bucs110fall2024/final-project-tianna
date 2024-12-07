@@ -22,7 +22,7 @@ This program is an online version of hangman with an easy mode where the user tr
 
 ### Final Design
 
-![final gui](assets/finalgui.jpg)
+![final gui](assets/final_gui.jpg)
 
 ## Program Design
 
